@@ -1,0 +1,19 @@
+{
+  "name": "kinoarea",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "vite": "^4.3.9"
+  },
+  "dependencies": {
+    "axios": "^1.4.0",
+    "chart": "^0.1.2",
+    "js": "^0.1.0"
+  }
+}

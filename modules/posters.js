@@ -41,9 +41,9 @@ function reload_posters(arr) {
 
         poster_items.src = import.meta.env.VITE_PICTURE_URL + item.poster_path
         h2_total.innerHTML = item.title
+        reytings.innerHTML =item.vote_average;
 
 
-        reytings.innerHTML = "6.50"
         p_jeners.innerHTML = "Триллер"
         btn.innerHTML = "Карточка фильма"
 

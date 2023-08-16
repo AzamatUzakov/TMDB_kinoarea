@@ -1,7 +1,7 @@
 
 
 
-function reload_posters(arr) {
+function reload_posters() {
     /*     posters.innerHTML = ""
         for (let item of arr) { */
 
@@ -24,9 +24,9 @@ function reload_posters(arr) {
         p_jeners.classList.add("p")
 
 
-        poster_items.src = import.meta.env.VITE_PICTURE_URL + item.poster_path
+   /*      poster_items.src = import.meta.env.VITE_PICTURE_URL + item.poster_path
         h2_total.innerHTML = item.title.slice(0, 30) + '...'
-
+ */
 
         reytings.innerHTML = "6.50"
         p_jeners.innerHTML = "Триллер"

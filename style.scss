@@ -346,21 +346,22 @@ header {
 
     p {
       color: #FFF;
-      font-size: 20px;
+      font-size: 16px;
       font-style: normal;
       font-weight: 900;
       line-height: normal;
     }
 
     .box_photo {
-      height: 250px;
+      width:300px;
       position: relative;
 
       .hovereds {
         width: 100%;
-        height: 80%;
+        height: 89%;
         z-index: 99;
         top: 0%;
+        border-radius: 10px;
         background-color: black;
         transition: .9s ease;
         position: absolute;
@@ -368,19 +369,21 @@ header {
 
 
       }
-
+      .player {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%) translateX(-50%);
+        z-index: 199;
+        left: 50%;
+        width: 10%;
+      }
       .elem_photo {
-        width: 360px;
+        width:280px;
         background-color: #13bb3d;
         height: 200px;
+        border-radius: 10px;
 
-        .player {
-          position: absolute;
-          top: 50%;
-          transform: translateY(-50%) translateX(-50%);
-          z-index: 199;
-          left: 50%;
-        }
+  
       }
     }
 

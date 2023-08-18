@@ -1,6 +1,7 @@
 
 let posters = document.querySelector('.posters')
-
+let showingAllPosters = false
+/* 
 
 fetch('https://api.themoviedb.org/3/genre/movie/list?language=en', {
     headers: {
@@ -10,27 +11,29 @@ fetch('https://api.themoviedb.org/3/genre/movie/list?language=en', {
     .then((res) => res.json())
     .then((res) => { 
 
-        fetch(
-            'https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=1', {
-            headers: {
-                Authorization: `Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI2ZWIwNmU5YzExYTA2NzFmNmFhYjUwNzU4ZjBhYzczMSIsInN1YiI6IjY0ZDg5YjVlZjQ5NWVlMDI5NDMwNWM0MCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.aoDhRlGV-Iv_PiTmdIt1LCgA7Ho2vh4aV50M04VXY7M`
-            },
-        }
-        )
-            .then((res) => res.json())
-            .then((movies) => reload_posters(movies.results, res.genres));
-    })
+
+    }) */
+fetch(
+    'https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=1', {
+    headers: {
+        Authorization: `Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI2ZWIwNmU5YzExYTA2NzFmNmFhYjUwNzU4ZjBhYzczMSIsInN1YiI6IjY0ZDg5YjVlZjQ5NWVlMDI5NDMwNWM0MCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.aoDhRlGV-Iv_PiTmdIt1LCgA7Ho2vh4aV50M04VXY7M`
+    },
+}
+)
+    .then((res) => res.json())
+    .then((res) => reload_posters(res.results));
 
 
 function reload_posters(arr) {
     posters.innerHTML = ""
-    for (let item of arr) {
+    const toShow = showingAllPosters ? arr.length : 8
+    for (let item of arr.slice(0, toShow)) {
 
         /*     for (let item = 0; item < 10; item++) {
          */
 
 
-
+        let show_btn = document.querySelector('.new_btn')
         let box_posters = document.createElement('div')
         let hovered = document.createElement('div')
         let poster_items = document.createElement('img')
@@ -86,10 +89,18 @@ function reload_posters(arr) {
 
             }
         }, 1);
+
         btn.onclick = () => {
             btn_href.href = "/id/id.html?id=" + item.id
         }
 
+
+        show_btn.innerHTML = showingAllPosters ? 'Скрыть' : 'Показать все'
+        show_btn.onclick = () => {
+          // showPosters.style.scale = '0.8'
+          showingAllPosters = !showingAllPosters
+          reload_posters(arr)
+        }
     }
 
 }

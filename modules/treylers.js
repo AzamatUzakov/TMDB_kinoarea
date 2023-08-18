@@ -1,14 +1,35 @@
 
 
 let scroll_video_treylers = document.querySelector('.scroll_video_treylers')
+let real_iframe = document.querySelector('.iframes')
+
+fetch(
+    'https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=1', {
+    headers: {
+        Authorization: `Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI2ZWIwNmU5YzExYTA2NzFmNmFhYjUwNzU4ZjBhYzczMSIsInN1YiI6IjY0ZDg5YjVlZjQ5NWVlMDI5NDMwNWM0MCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.aoDhRlGV-Iv_PiTmdIt1LCgA7Ho2vh4aV50M04VXY7M`
+    },
+}
+)
+    .then((res) => res.json())
+    .then((res) => res.results[7])
+    .then((movie) => {
+        fetch(`https://api.themoviedb.org/3/movie/${movie.id}/videos`, {
+            headers: {
+                Authorization: `Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI2ZWIwNmU5YzExYTA2NzFmNmFhYjUwNzU4ZjBhYzczMSIsInN1YiI6IjY0ZDg5YjVlZjQ5NWVlMDI5NDMwNWM0MCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.aoDhRlGV-Iv_PiTmdIt1LCgA7Ho2vh4aV50M04VXY7M`
+            },
+        })
+            .then((res => res.json()))
+            .then(res => reload_trilers(res.results))
+    })
 
 
 
-function reload_trilers() {
-    for (let item = 0; item < 20; item++) {
+function reload_trilers(arr) {
+    scroll_video_treylers.innerHTML = ""
+    for (let item of arr) {
         let box_photo = document.createElement('div')
-         let hovered = document.createElement('div')
-       let elem_photo = document.createElement('div')
+        let hovered = document.createElement('div')
+        let elem_photo = document.createElement('iframe')
         let player = document.createElement('img')
         let p_names = document.createElement('p')
 
@@ -20,18 +41,22 @@ function reload_trilers() {
 
         p_names.innerHTML = "Мулана"
         player.src = "/public/player.png"
-
+        elem_photo.src = `https://www.youtube.com/embed/${item.key}`
 
         scroll_video_treylers.append(box_photo)
-        box_photo.append(elem_photo,p_names)
-        elem_photo.append(player,hovered)
+        box_photo.append(elem_photo, p_names)
+        elem_photo.append(player, hovered)
 
 
 
+        box_photo.onclick = () => {
+            real_iframe.src = box_photo.item.key
+            console.log('click');
+        }
 
-      box_photo.onmouseenter = () => {
+
+        box_photo.onmouseenter = () => {
             hovered.classList.add('hovereds')
-            console.log('move');
 
         }
 
@@ -41,12 +66,10 @@ function reload_trilers() {
             box_photo.onmouseleave = () => {
                 hovered.classList.remove('hovereds')
 
-                console.log('move');
 
             }
-        }, 0); 
+        }, 0);
 
     }
 }
 
-reload_trilers()

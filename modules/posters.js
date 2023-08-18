@@ -1,15 +1,14 @@
-import { headerApi } from "./http.js"
 
 let posters = document.querySelector('.posters')
 
 
-fetch('https://api.themoviedb.org/3/genre/movie/list?language=en',headerApi(), {
+fetch('https://api.themoviedb.org/3/genre/movie/list?language=en', {
     headers: {
         Authorization: `Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI2ZWIwNmU5YzExYTA2NzFmNmFhYjUwNzU4ZjBhYzczMSIsInN1YiI6IjY0ZDg5YjVlZjQ5NWVlMDI5NDMwNWM0MCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.aoDhRlGV-Iv_PiTmdIt1LCgA7Ho2vh4aV50M04VXY7M`
     },
 })
     .then((res) => res.json())
-    .then((res) => {
+    .then((res) => { 
 
         fetch(
             'https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=1', {
@@ -91,19 +90,6 @@ function reload_posters(arr) {
             btn_href.href = "/id/id.html?id=" + item.id
         }
 
-
-
-
-        function reloadItem(arr, genres) {
-
-            let genreNames = item.genre_ids.map(id => {
-                let genre = genres.find(g => g.id === id);
-                return genre ? genre.name : '';
-            }).filter(name => name !== '').join(', ');
-        
-            p_jeners.innerHTML = genreNames;
-        console.log(p_jeners);
-        }
     }
 
 }

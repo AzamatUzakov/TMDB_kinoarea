@@ -1,1 +1,10 @@
-{"version":3,"sources":["../headers/style.scss","style.css"],"names":[],"mappings":"AAAA;EACI,+BAAA;ACCJ","file":"style.css"}
+{
+    "version": 3,
+    "sources": [
+        "../headers/style.scss",
+        "style.css"
+    ],
+    "names": [],
+    "mappings": "AAAA;EACI,+BAAA;ACCJ",
+    "file": "style.css"
+}

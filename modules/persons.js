@@ -1,11 +1,19 @@
 
 
 
-function persons() {
-    let place_flex_conetner = document.querySelector('.place_flex_conetner')
-    for (let i = 0; i < 2; i++) {
+fetch('https://api.themoviedb.org/3/person/popular?language=en-US&page=1', {
+    headers: {
+        Authorization: `Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI2ZWIwNmU5YzExYTA2NzFmNmFhYjUwNzU4ZjBhYzczMSIsInN1YiI6IjY0ZDg5YjVlZjQ5NWVlMDI5NDMwNWM0MCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.aoDhRlGV-Iv_PiTmdIt1LCgA7Ho2vh4aV50M04VXY7M`
+    },
+})
+    .then((res) => res.json())
+    .then((res) => persons(res.results))
 
-        let img_place = document.createElement('div')
+function persons(arr) {
+    let place_flex_conetner = document.querySelector('.place_flex_conetner')
+    for (let i of arr.slice(0, 2)) {
+
+        let img_place = document.createElement('img')
         let place_title = document.createElement('div')
         let place_cont_avtor = document.createElement('div')
         let h4 = document.createElement('h4')
@@ -21,6 +29,7 @@ function persons() {
         p.classList.add('p')
 
 
+        img_place.src = import.meta.env.VITE_PICTURE_URL + i.profile_path
         place_title.innerHTML = "1-ое место"
         h4.innerHTML = "Квентин Тарантино"
         pig.innerHTML = "Quentin Tarantino"
@@ -32,13 +41,22 @@ function persons() {
 
     }
 
-} persons()
+}
 
 
-function table_persons() {
+
+fetch('https://api.themoviedb.org/3/person/popular?language=en-US&page=1', {
+    headers: {
+        Authorization: `Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI2ZWIwNmU5YzExYTA2NzFmNmFhYjUwNzU4ZjBhYzczMSIsInN1YiI6IjY0ZDg5YjVlZjQ5NWVlMDI5NDMwNWM0MCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.aoDhRlGV-Iv_PiTmdIt1LCgA7Ho2vh4aV50M04VXY7M`
+    },
+})
+    .then((res) => res.json())
+    .then((res) => table_persons(res.results))
+
+function table_persons(arr) {
     let place_table_box = document.querySelector('.place_table_box')
 
-    for (let i = 0; i < 3; i++) {
+    for (let i of arr) {
 
         let three_place = document.createElement('div')
         let titles = document.createElement('div')
@@ -57,11 +75,13 @@ function table_persons() {
         place_index.classList.add('place_index')
         hr.classList.add('hr')
 
-        h2_table.innerHTML = "Тино Брасс"
-        p_doc.innerHTML = "Tinto Brass"
-        p_years.innerHTML = '87 лет'
-        place_index.innerHTML = "3-ое место"
+        h2_table.innerHTML = i.name
+        p_doc.innerHTML = i.name
+        p_years.innerHTML = "Популярность - "+ i.popularity
+        place_index.innerHTML = 
 
+
+ 
         place_table_box.append(three_place, hr)
         three_place.append(titles, place_index)
         titles.append(h2_table, p_doc, p_years)
@@ -69,4 +89,4 @@ function table_persons() {
 
     }
 }
-table_persons()
+

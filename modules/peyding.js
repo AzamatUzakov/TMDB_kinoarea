@@ -1,11 +1,18 @@
 
 
 
-function reload_peyding_posters() {
+fetch('https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=1', {
+    headers: {
+        Authorization: `Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI2ZWIwNmU5YzExYTA2NzFmNmFhYjUwNzU4ZjBhYzczMSIsInN1YiI6IjY0ZDg5YjVlZjQ5NWVlMDI5NDMwNWM0MCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.aoDhRlGV-Iv_PiTmdIt1LCgA7Ho2vh4aV50M04VXY7M`
+    },
+})
+    .then((res) => res.json())
+    .then((res) => reload_peyding_posters(res.results))
+
+function reload_peyding_posters(arr) {
     let peyding_posters = document.querySelector('.peyding_posters')
     /*    for (let item of arr) { */
-
-    for (let item = 0; item < 4;item++) {
+    for (let item of arr) {
 
         let box_posters = document.createElement('div')
         let hovered = document.createElement('div')
@@ -24,8 +31,9 @@ function reload_peyding_posters() {
         h2_total.innerHTML = item.title.slice(0, 30) + '...'
  */
 
-        p_jeners.innerHTML = "Триллер"
-        h2_total.innerHTML ="Прощай"
+        p_jeners.innerHTML = ""
+        h2_total.innerHTML =item.title  
+        poster_items.src= import.meta.env.VITE_PICTURE_URL + item.poster_path
 
 
         peyding_posters.append(box_posters)

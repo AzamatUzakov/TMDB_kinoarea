@@ -1,11 +1,19 @@
 
 let pop_cont = document.querySelector('.pop_cont')
 
-function popular() {
-    for (let i = 0; i < 4; i++) {
 
+fetch('https://api.themoviedb.org/3/movie/popular?language=uz-US&page=1', {
+    headers: {
+        Authorization: `Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI2ZWIwNmU5YzExYTA2NzFmNmFhYjUwNzU4ZjBhYzczMSIsInN1YiI6IjY0ZDg5YjVlZjQ5NWVlMDI5NDMwNWM0MCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.aoDhRlGV-Iv_PiTmdIt1LCgA7Ho2vh4aV50M04VXY7M`
+    },
+})
+    .then((res) => res.json())
+    .then((res) => popular(res.results))
+
+function popular(arr) {
+    for (let i of arr) {
         let divPopular = document.createElement('div');
-        let divImg = document.createElement('div');
+        let divImg = document.createElement('img');
         let divRatings = document.createElement('div');
         let h3 = document.createElement('h3');
         let p = document.createElement('p');
@@ -13,12 +21,16 @@ function popular() {
         divPopular.classList.add('box_popular');
         divImg.classList.add('box_img');
         divRatings.classList.add('pop_reytings');
+        h3.classList.add('h3')
 
-        divRatings.innerHTML='7.30'
-        h3.innerHTML = 'joker';
-        p.innerHTML = 'triler';
+        divImg.src = import.meta.env.VITE_PICTURE_URL + i.poster_path
+        h3.innerHTML = i.title.slice(0,13)
+        if (i.title.length > divImg.length){
+            i.title.slice(0,10)
+        }
+            divRatings.innerHTML = i.vote_average
+
         pop_cont.append(divPopular)
         divPopular.append(divImg, divRatings, h3, p);
     }
 }
-popular()

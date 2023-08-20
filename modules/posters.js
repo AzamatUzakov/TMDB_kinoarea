@@ -26,12 +26,36 @@ fetch(
 
 function reload_posters(arr) {
     posters.innerHTML = ""
+    let body = document.querySelector('body')
     const toShow = showingAllPosters ? arr.length : 8
     for (let item of arr.slice(0, toShow)) {
 
         /*     for (let item = 0; item < 10; item++) {
          */
 
+
+
+   /*      fetch(
+            `https://api.themoviedb.org/3/movie/${item.id}now_playing?language=en-US&page=1`, {
+            headers: {
+                Authorization: `Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI2ZWIwNmU5YzExYTA2NzFmNmFhYjUwNzU4ZjBhYzczMSIsInN1YiI6IjY0ZDg5YjVlZjQ5NWVlMDI5NDMwNWM0MCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.aoDhRlGV-Iv_PiTmdIt1LCgA7Ho2vh4aV50M04VXY7M`
+            },
+        }
+        )
+            .then((res) => res.json())
+            .then(res =>{
+
+                box_posters.onmouseenter = () => {
+                    body.backgroundImage = `url(https://image.tmdb.org/t/p/original${item.backdrop_path})`
+                }
+
+            })
+ */
+        /*   setTimeout(() => {
+              box_posters.onmouseleave = () => {
+  
+              }
+          }, 1); */
 
         let show_btn = document.querySelector('.new_btn')
         let box_posters = document.createElement('div')
@@ -97,9 +121,9 @@ function reload_posters(arr) {
 
         show_btn.innerHTML = showingAllPosters ? 'Скрыть' : 'Показать все'
         show_btn.onclick = () => {
-          // showPosters.style.scale = '0.8'
-          showingAllPosters = !showingAllPosters
-          reload_posters(arr)
+            // showPosters.style.scale = '0.8'
+            showingAllPosters = !showingAllPosters
+            reload_posters(arr)
         }
     }
 

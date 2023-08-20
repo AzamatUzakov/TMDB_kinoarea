@@ -14,7 +14,6 @@ fetch(
 
 function reload_trilers(arr) {
     scroll_video_treylers.innerHTML = ""
-    console.log(arr);
     for (let item of arr) {
         let box_photo = document.createElement('div')
         let hovered = document.createElement('div')
@@ -64,7 +63,7 @@ function reload_trilers(arr) {
 
                 let rnd = Math.floor(Math.random() * res.results.length)
                 let selectMovie = res.results[rnd]
-                    player.onclick = () => {
+                    hovered.onclick = () => {
                     real_iframe.src = `https://www.youtube.com/embed/${selectMovie.key}`
                     console.log('click');
                 }

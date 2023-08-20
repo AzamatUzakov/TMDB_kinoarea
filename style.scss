@@ -6,8 +6,14 @@
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
-.one_zone {
-  background: #1E2538;
+body {
+  top: 20%;
+  margin-top: 700px;
+  background-color: #1E2538;
+  background-image: url(../TMDB_kinoarea/public/joker.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 header {
@@ -15,6 +21,8 @@ header {
   justify-content: space-between;
   align-items: center;
   width: 100%;
+  margin-bottom: 10px;
+
 
   .icos_flex {
     .kinoarea_icons_blocks {
@@ -120,8 +128,13 @@ header {
 }
 
 .layot_contener {
+  top: 0%;
 
+  position: absolute;
   padding: 30px 0;
+  left: 50%;
+
+  transform: translateX(-50%);
 
   .act_btn {
     width: 150px;
@@ -294,10 +307,11 @@ header {
 
   .video_box {
 
-    iframe{
+    iframe {
       width: 100%;
       height: 500px;
     }
+
     .flex_new_treyler {
       display: flex;
       justify-content: space-between;
@@ -353,7 +367,7 @@ header {
     }
 
     .box_photo {
-      width:300px;
+      width: 300px;
       position: relative;
 
       .hovereds {
@@ -369,6 +383,7 @@ header {
 
 
       }
+
       .player {
         position: absolute;
         top: 50%;
@@ -377,13 +392,14 @@ header {
         left: 50%;
         width: 10%;
       }
+
       .elem_photo {
-        width:280px;
+        width: 280px;
         background-color: #13bb3d;
         height: 200px;
         border-radius: 10px;
 
-  
+
       }
     }
 
@@ -523,15 +539,23 @@ header {
       display: flex;
       align-items: center;
       gap: 20px;
+      overflow-x: scroll;
+      width: 100%;
       justify-content: center;
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
     }
 
+
+
     .box_popular {
-      margin: 40px 0;
-      width: 240px;
-      height: 340px;
+      margin: 40px 10px;
+      height: 100%;
       position: relative;
-      background-color: #F2F60F;
+
+
 
       .popular_hovered {
         width: 100%;
@@ -546,11 +570,12 @@ header {
 
       }
 
-      h2 {
+      .h3 {
         color: #FFF;
-        font-size: 14px;
+        margin-top: 7px;
+        font-size: 18px;
         font-style: normal;
-        font-weight: 700;
+        font-weight: 500;
         line-height: normal;
       }
 
@@ -567,8 +592,8 @@ header {
         display: flex;
         justify-content: end;
         border-radius: 10px;
-        width: 100%;
-        height: 100%;
+        width: 250px;
+        height: 350px;
 
       }
 
@@ -576,7 +601,7 @@ header {
         width: 20%;
         height: 8%;
         border-radius: 5px;
-        background-color: #111411;
+        background-color: #04ec04;
         position: absolute;
         justify-content: center;
         align-items: center;
@@ -659,12 +684,16 @@ header {
     justify-content: space-between;
 
     .img_place {
-      width: 32%;
-      height: 300px;
+      width: 30%;
+      height: 400px;
       background-color: #3657CB;
       position: relative;
-      padding: 3% 0 0 3%;
       border-radius: 10px;
+      /*      top: 0;
+      left: 0;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center; */
 
       .place_title {
         color: #F2F60F;
@@ -672,6 +701,10 @@ header {
         font-style: normal;
         font-weight: 500;
         line-height: 20px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 99;
         /* 133.333% */
       }
 
@@ -687,6 +720,7 @@ header {
           font-style: normal;
           font-weight: 700;
           line-height: normal;
+          position: absolute;
         }
 
         #pig {
@@ -712,11 +746,16 @@ header {
 
   .place_table_box {
     width: 34%;
-    height: 300px;
+    height: 400px;
     position: relative;
     padding: 1% 1%;
     border-radius: 10px;
     background: #171c2b;
+    overflow-y: scroll;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
 
     hr {
       border-color: #1E2538;
@@ -732,15 +771,15 @@ header {
         color: #FFF;
         font-size: 15px;
         font-style: normal;
-        font-weight: 700;
+        font-weight: 400;
         line-height: normal;
       }
 
-      #doc {
+      .doc {
         color: #3B486B;
         font-size: 14px;
         font-style: normal;
-        font-weight: 600;
+        font-weight: 400;
         line-height: normal;
       }
 
@@ -756,7 +795,7 @@ header {
         color: #F2F60F;
         font-size: 12px;
         font-style: normal;
-        font-weight: 600;
+        font-weight: 400;
         line-height: normal;
       }
     }
@@ -797,6 +836,12 @@ header {
     }
 
 
+    .news {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      border-radius: 10px;
+    }
 
     .news_boxses {
       display: flex;
@@ -805,10 +850,11 @@ header {
       .background_images {
         width: 77%;
         height: 500px;
-        background-color: #00fa0c;
-        padding: 2%;
         border-radius: 10px;
+        background-position: center;
         position: relative;
+        background-size: cover;
+        background-repeat: no-repeat;
 
         .date_commit_flex_box {
           display: flex;
@@ -823,6 +869,7 @@ header {
             line-height: 191.2%;
             /* 28.68px */
           }
+
 
 
           .prosmotrs {
@@ -842,10 +889,10 @@ header {
             display: flex;
             gap: 5px;
 
-            p {
+            .p {
               color: #FFF;
               font-size: 14px;
-
+              text-shadow: 10 10 10 black;
               font-weight: 500;
               line-height: 191.2%;
             }
@@ -860,19 +907,14 @@ header {
 
 
           h1 {
-            color: #FFF;
-            font-size: 25px;
-            font-style: normal;
-            font-weight: 700;
-            line-height: normal;
+            color: #444444;
+            text-shadow: -12px 16px 9px rgba(0, 0, 0, 0.73);
+            margin: 0 0 0 10px;
           }
 
           #ping {
-            color: #FFF;
-            font-size: 15px;
-            font-weight: 500;
-            margin-top: 10px;
-
+            margin: 0 0 0 10px;
+            text-shadow: -12px 16px 9px rgba(0, 0, 0, 0.73);
           }
         }
 
@@ -884,6 +926,12 @@ header {
 
     .rigt_img_new {
       position: relative;
+      overflow-y: scroll;
+      height: 500px;
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
 
       .hovered {
         width: 100%;
@@ -902,7 +950,6 @@ header {
         width: 230px;
         height: 150px;
         background-color: #11c44d;
-        padding: 10px;
         border-radius: 10px;
         margin-bottom: 22px;
         position: relative;
@@ -912,6 +959,8 @@ header {
           color: #FFF;
           font-size: 12px;
           font-weight: 500;
+          position: absolute;
+          z-index: 99%;
         }
 
         .title_p {
@@ -964,37 +1013,44 @@ header {
 
     .peyding_posters {
       display: flex;
-      flex-wrap: wrap;
       align-items: center;
-      gap: 15px;
+      width: 100%;
+      height: 100%;
+      gap: 20px;
       justify-content: space-between;
+      overflow-x: scroll;
+      overflow-y: hidden;
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
 
 
 
       .box_posters_peyding {
         margin: 20px 0;
-        width: 23%;
-        height: 300px;
+        width: 280px;
         position: relative;
 
-        .hovered {
-          width: 100%;
-          height: 100%;
-          z-index: 99;
-          border-radius: 10px;
-          top: 0%;
-          background: rgba(54, 87, 203, 0.65);
-          transition: .9s ease;
-          position: absolute;
+        /*      .hovered {
+            width: 100%;
+            height: 100%;
+            z-index: 99;
+            border-radius: 10px;
+            top: 0%;
+            background: rgba(54, 87, 203, 0.65);
+            transition: .9s ease;
+            position: absolute;
 
 
-        }
+          } */
 
-        h2 {
+        .h2 {
           color: #FFF;
-          font-size: 14px;
+          font-size: 15px;
           font-style: normal;
-          font-weight: 700;
+          font-weight: 400;
+          margin-top: 1px;
           line-height: normal;
         }
 
@@ -1007,8 +1063,8 @@ header {
         }
 
         .poster_items_peyding {
-          width: 100%;
-          height: 100%;
+          width: 280px;
+          height: 370px;
           background-color: green;
           display: flex;
           justify-content: end;
@@ -1027,8 +1083,8 @@ header {
 }
 
 .bacdrop_path {
-z-index: 99;
-background: #1E2538;
+  z-index: 99;
+  background: #1E2538;
 
 
 }
@@ -1044,12 +1100,15 @@ background: #1E2538;
     justify-content: space-between;
     gap: 30px;
     margin: 40px 0;
-.posters{
-  background-color: #00fa0c;
-}
+
+    .posters {
+      background-color: #00fa0c;
+    }
+
     .box_post {
       width: 60%;
       height: 90%;
+
       .posters_img {
         width: 100%;
         border-radius: 10px;
@@ -1101,6 +1160,107 @@ background: #1E2538;
 
 }
 
+
+
+.casse_sbors_cntneter {
+  margin: 70px 0;
+
+  .title_sbors_flex_cont {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+
+    .h1_box_sbors {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+
+      h1 {
+        color: #FFF;
+        font-size: 40px;
+        font-weight: 700;
+
+      }
+
+      p {
+        color: #FFF;
+        font-size: 15px;
+        font-weight: 400;
+        margin: 12px 0 0;
+      }
+    }
+  }
+
+  .continental_box {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    a {
+
+      text-decoration: none;
+      color: #FFF;
+      font-size: 15px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: normal;
+    }
+  }
+
+  .scroll_cont {
+    width: 100%;
+    display: flex;
+    overflow-x: scroll;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    .box_sbors {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+
+      .posters_sbors_img {
+        width: 100px;
+        height: 150px;
+        background-color: #00fa0c;
+      }
+
+      .info_title_sbors_cont {
+
+        .title {
+          color: #FFF;
+          font-size: 18px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: normal;
+        }
+
+        .total {
+          color: #F2F60F;
+          font-size: 15px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: normal;
+          margin: 8px 0;
+        }
+
+        .week_total {
+          color: rgba(255, 255, 255, 0.41);
+          font-size: 14px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: normal;
+        }
+      }
+
+    }
+
+  }
+
+}
 
 
 

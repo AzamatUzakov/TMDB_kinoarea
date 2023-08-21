@@ -33,7 +33,8 @@ function news_reload(arr) {
         hovered_new.classList.add('hovered_new')
 
 bac_img.src = import.meta.env.VITE_PICTURE_URL + i.backdrop_path
-
+/* bac_img.backgrounImage = `Url(/${import.meta.env.VITE_PICTURE_URL}${ + i.poster_path})`
+ */
 
         date.innerHTML = "15 Апр 2020"
         title_p.innerHTML = "Как изменили Соника с последнего анонса"

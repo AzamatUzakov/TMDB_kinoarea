@@ -19,9 +19,8 @@ function news_reload(arr) {
         /*         background_images.backgroundImage = `url(${import.meta.env.VITE_PICTURE_URL + i.backdrop_path})`
  */
 
-        background_images.src = import.meta.env.VITE_PICTURE_URL + i.backdrop_path
-
-        let bac_img = document.createElement('img')
+        background_images.style.backgroundImage = `url(https://image.tmdb.org/t/p/original${i.poster_path})`
+        let bac_img = document.createElement('div')
         let date = document.createElement('div')
         let title_p = document.createElement('div')
         let hovered_new = document.createElement('div')
@@ -32,9 +31,10 @@ function news_reload(arr) {
         title_p.classList.add('title_p')
         hovered_new.classList.add('hovered_new')
 
-bac_img.src = import.meta.env.VITE_PICTURE_URL + i.backdrop_path
-/* bac_img.backgrounImage = `Url(/${import.meta.env.VITE_PICTURE_URL}${ + i.poster_path})`
- */
+        bac_img.style.backgroundImage = ` url(https://image.tmdb.org/t/p/original${i.backdrop_path})`
+
+        /* bac_img.backgrounImage = `Url(/${import.meta.env.VITE_PICTURE_URL}${ + i.poster_path})`
+         */
 
         date.innerHTML = "15 Апр 2020"
         title_p.innerHTML = "Как изменили Соника с последнего анонса"

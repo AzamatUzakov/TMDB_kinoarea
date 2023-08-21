@@ -10,7 +10,7 @@ fetch(
     },
 }
 ).then((res) => res.json())
-    .then((res) => console.log(res.results))
+    .then((res) =>reload_trilers(res.results))
 
 function reload_trilers(arr) {
     scroll_video_treylers.innerHTML = ""

@@ -26,7 +26,7 @@ fetch(
 
 function reload_posters(arr) {
     posters.innerHTML = ""
-    let body = document.querySelector('body')
+    let body = document.querySelector('.background_image')
     const toShow = showingAllPosters ? arr.length : 8
     for (let item of arr.slice(0, toShow)) {
 
@@ -98,6 +98,9 @@ function reload_posters(arr) {
                 hovered.style.alignItems = 'center'
             }, 10);
             console.log('move');
+
+                body.style.backgroundImage =` url(https://image.tmdb.org/t/p/original${item.backdrop_path})`
+
 
         }
 

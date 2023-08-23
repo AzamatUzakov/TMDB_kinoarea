@@ -3,9 +3,8 @@ Chart.register(...registerables)
 
 
 
-let poster_id = location.search.split('=').at(-1)
+ let poster_id = location.search.split('=').at(-1)
 let body = document.querySelector('body')
-console.log(poster_id);
 
 
 fetch(`https://api.themoviedb.org/3/movie/${poster_id}`, {
@@ -19,7 +18,6 @@ fetch(`https://api.themoviedb.org/3/movie/${poster_id}`, {
 
 
 function reload_informations(arr) {
-    console.log(arr);
 
     let procents_hindred = 10
     let Kinoarea_reyting = 0
@@ -31,7 +29,6 @@ function reload_informations(arr) {
 
 
     let bacground_path = document.querySelector('body')
-    console.log(bacground_path);
     let posters = document.createElement('div')
     let posters_img = document.createElement('img')
     let box_post = document.createElement('div')
@@ -78,7 +75,6 @@ function reload_informations(arr) {
 
 
     body.style.backgroundImage = ` url(https://image.tmdb.org/t/p/original${arr.backdrop_path})`
-    console.log(arr.backdrop_path);
     posters_img.src = import.meta.env.VITE_PICTURE_URL + arr.poster_path
     player_btn.src = "/public/player_btn.png"
     one_icon_img.src = '/public/vk.png'
@@ -98,16 +94,16 @@ function reload_informations(arr) {
     chart_two_name.innerHTML = "IMDb"
 
 
-    contener.append(information_flex)
-    information_flex.append(box_post, posters, title_cont)
-    box_post.append(posters_img)
-    title_cont.append(h1, eng, charta_flex_box, p, btn_of_icon_flex_cont)
-    btn_of_icon_flex_cont.append(btn, icons_box)
-    icons_box.append(one_icon_img, two_icon_img, three_icon_img, foor_icon_img, five_icon_img)
-    btn.append(player_btn)
-    charta_flex_box.append(one_chart_box, two_chart_box)
-    one_chart_box.append(ctx, chart_one_totals, chart_one_name)
-    two_chart_box.append(ctx_two, chart_two_totals, chart_two_name)
+    contener.prepend(information_flex)
+    information_flex.prepend(box_post, posters, title_cont)
+    box_post.prepend(posters_img)
+    title_cont.prepend(h1, eng, charta_flex_box, p, btn_of_icon_flex_cont)
+    btn_of_icon_flex_cont.prepend(btn, icons_box)
+    icons_box.prepend(one_icon_img, two_icon_img, three_icon_img, foor_icon_img, five_icon_img)
+    btn.prepend(player_btn)
+    charta_flex_box.prepend(one_chart_box, two_chart_box)
+    one_chart_box.prepend(ctx, chart_one_totals, chart_one_name)
+    two_chart_box.prepend(ctx_two, chart_two_totals, chart_two_name)
 
 
 
@@ -123,7 +119,7 @@ function reload_informations(arr) {
         .then((res) => res.json())
         .then(res => {
             Kinoarea_reyting = res.vote_average
-            console.log(Kinoarea_reyting);
+
 
             chart_one_totals.innerHTML = Kinoarea_reyting
             chart_two_totals.innerHTML = Kinoarea_reyting

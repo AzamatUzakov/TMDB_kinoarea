@@ -12,14 +12,14 @@ fetch('https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=1', {
 
 function news_reload(arr) {
     let rigt_img_new = document.querySelector('.rigt_img_new')
-    let background_images = document.querySelector('.news')
+    let background_images = document.querySelector('.background_images')
 
     for (let i of arr) {
 
         /*         background_images.backgroundImage = `url(${import.meta.env.VITE_PICTURE_URL + i.backdrop_path})`
  */
 
-        background_images.style.backgroundImage = `url(https://image.tmdb.org/t/p/original${i.poster_path})`
+        background_images.style.backgroundImage = `url(https://image.tmdb.org/t/p/original${i.backdrop_path})`
         let bac_img = document.createElement('div')
         let date = document.createElement('div')
         let title_p = document.createElement('div')

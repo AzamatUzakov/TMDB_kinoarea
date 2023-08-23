@@ -12,7 +12,6 @@ fetch('https://api.themoviedb.org/3/person/popular?language=en-US&page=1', {
 function persons(arr) {
     let place_flex_conetner = document.querySelector('.place_flex_conetner')
     for (let i of arr.slice(0, 2)) {
-        console.log(arr);
         let img_place = document.createElement('div')
         let place_title = document.createElement('div')
         let place_cont_avtor = document.createElement('div')
@@ -56,7 +55,6 @@ function table_persons(arr) {
     let place_table_box = document.querySelector('.place_table_box')
 
     for (let i of arr) {
-        console.log(arr);
         let three_place = document.createElement('div')
         let titles = document.createElement('div')
         let h2_table = document.createElement('h2')
@@ -77,14 +75,17 @@ function table_persons(arr) {
         h2_table.innerHTML = i.name
         p_doc.innerHTML = i.name
         p_years.innerHTML = "Популярность - " + i.popularity
-        place_index.innerHTML =
 
 
 
-            place_table_box.append(three_place, hr)
+        place_table_box.append(three_place, hr)
         three_place.append(titles, place_index)
         titles.append(h2_table, p_doc, p_years)
 
+        for (let it = 0; it < arr.length; it++) {
+            place_index.innerHTML = it
+
+        }
 
     }
 }

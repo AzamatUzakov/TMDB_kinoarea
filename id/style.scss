@@ -1,0 +1,275 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+
+.reaction_flex_cont {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+
+  .s {
+    width: 50px;
+    height: 50px;
+    border-radius: 10px;
+    background: #1B2133;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  p {
+    color: white;
+    font-size: 17px;
+  }
+}
+
+.main_roles_cont {
+  margin-top: 50px;
+
+  .flex_h1 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+
+    .strelka {
+      display: flex;
+      align-items: center;
+      gap: 13px;
+    }
+  }
+
+  .main_box {
+    margin-top: 20px;
+
+    .people_img {
+      width: 200px;
+      height: 200px;
+      background-color: #1B2133;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    .names {
+      font-size: 18px;
+      color: white;
+      font-weight: 400;
+    }
+
+    .org_name {
+      font-size: 15px;
+      color: rgba(255, 255, 255, 0.70);
+    }
+
+    .ru_name {
+      color: #F2F60F;
+      font-size: 13px;
+      font-weight: 100;
+    }
+  }
+}
+
+
+
+.video_box {
+
+  iframe {
+    width: 100%;
+    height: 500px;
+  }
+
+  .flex_new_treyler {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .h1_block {
+      color: #FFF;
+      font-size: 20px;
+      font-style: normal;
+      font-weight: 900;
+      line-height: normal;
+      margin-bottom: 40px;
+    }
+
+    .p_block {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 15px;
+
+      p {
+        color: #FFF;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+      }
+    }
+  }
+
+
+}
+
+.flex_contener_layks {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+
+  .one_flex_box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+
+    .name_treylers {
+      color: #FFF;
+      font-family: Qanelas;
+      font-size: 18px;
+      font-style: normal;
+      font-weight: 900;
+      line-height: normal;
+    }
+
+
+
+
+
+
+    .flex_icons {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+
+
+  }
+
+
+
+  .two_flex_box {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    text-align: center;
+    color: #FFF;
+    font-family: Qanelas;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+
+    .tops {
+      margin-top: 5px;
+    }
+
+    .background_like {
+      border-radius: 10px;
+      width: 50.871px;
+      height: 50.871px;
+      background: #1B2133;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+    }
+
+    .backgrounds_diz {
+      width: 50.871px;
+      height: 50.871px;
+      border-radius: 10px;
+      padding: 10px 0 0;
+      background: #1B2133;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+    }
+
+
+  }
+}
+
+.contener_create_elem {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 25px;
+  justify-content: space-between;
+  margin-bottom: 50px;
+}
+
+
+.flex_new_treyler_posters_films {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 40px 0;
+
+  h1 {
+    font-size: 40px;
+    color: #FFF;
+
+  }
+
+  .p_block_posters {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    p {
+      font-size: 17px;
+      color: #FFF;
+    }
+  }
+}
+
+.posters_cont{
+display: flex;
+align-items: center;
+justify-content: space-between;
+flex-wrap: wrap;
+  .poster{
+    width: 270px;
+    height: 400px;
+    background-color: #1B2133;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+  }
+}
+
+
+.big_cont{
+display: flex;
+flex-wrap: wrap;
+justify-content: space-between;
+margin-bottom: 50px;
+  .img_box{
+    width: 270px;
+    height: 400px;
+    background-color: #1B2133;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+.h1{
+  font-size: 17px;
+  color: white;
+  width: 270px;
+  display: flex;
+
+}
+.p{
+  font-size: 15px;
+  color: #F2F60F;
+ 
+}
+
+}

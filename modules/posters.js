@@ -13,7 +13,7 @@ fetch('https://api.themoviedb.org/3/genre/movie/list?language=en', {
 
 
     }) */
-fetch(
+export let fethcs = fetch(
     'https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=1', {
     headers: {
         Authorization: `Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI2ZWIwNmU5YzExYTA2NzFmNmFhYjUwNzU4ZjBhYzczMSIsInN1YiI6IjY0ZDg5YjVlZjQ5NWVlMDI5NDMwNWM0MCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.aoDhRlGV-Iv_PiTmdIt1LCgA7Ho2vh4aV50M04VXY7M`
@@ -30,32 +30,6 @@ function reload_posters(arr) {
     const toShow = showingAllPosters ? arr.length : 8
     for (let item of arr.slice(0, toShow)) {
 
-        /*     for (let item = 0; item < 10; item++) {
-         */
-
-
-
-   /*      fetch(
-            `https://api.themoviedb.org/3/movie/${item.id}now_playing?language=en-US&page=1`, {
-            headers: {
-                Authorization: `Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI2ZWIwNmU5YzExYTA2NzFmNmFhYjUwNzU4ZjBhYzczMSIsInN1YiI6IjY0ZDg5YjVlZjQ5NWVlMDI5NDMwNWM0MCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.aoDhRlGV-Iv_PiTmdIt1LCgA7Ho2vh4aV50M04VXY7M`
-            },
-        }
-        )
-            .then((res) => res.json())
-            .then(res =>{
-
-                box_posters.onmouseenter = () => {
-                    body.backgroundImage = `url(https://image.tmdb.org/t/p/original${item.backdrop_path})`
-                }
-
-            })
- */
-        /*   setTimeout(() => {
-              box_posters.onmouseleave = () => {
-  
-              }
-          }, 1); */
 
         let show_btn = document.querySelector('.new_btn')
         let box_posters = document.createElement('div')
@@ -99,7 +73,7 @@ function reload_posters(arr) {
             }, 10);
             console.log('move');
 
-                body.style.backgroundImage =` url(https://image.tmdb.org/t/p/original${item.backdrop_path})`
+            body.style.backgroundImage = ` url(https://image.tmdb.org/t/p/original${item.backdrop_path})`
 
 
         }
@@ -128,6 +102,26 @@ function reload_posters(arr) {
             showingAllPosters = !showingAllPosters
             reload_posters(arr)
         }
+
+        fetch(`https://api.themoviedb.org/3/genre/movie/list?language=en`, {
+            headers: {
+                Authorization: `Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI2ZWIwNmU5YzExYTA2NzFmNmFhYjUwNzU4ZjBhYzczMSIsInN1YiI6IjY0ZDg5YjVlZjQ5NWVlMDI5NDMwNWM0MCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.aoDhRlGV-Iv_PiTmdIt1LCgA7Ho2vh4aV50M04VXY7M`
+            },
+        })
+            .then((res) => res.json())
+            .then((res) => {
+                let info_ganr_tx = ``
+                for (const el of item.genre_ids) {
+                    const genres = res.genres.filter(obj => obj.id === el);
+                    info_ganr_tx = info_ganr_tx + genres[0].name + `, `
+                }
+                p_jeners.innerHTML = info_ganr_tx.slice(0, -2)
+            })
+
+
+
+
+    
     }
 
 }

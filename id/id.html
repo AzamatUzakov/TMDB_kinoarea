@@ -2,31 +2,39 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="/style.scss">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="/style.scss">
+  <link rel="stylesheet" href="./style.scss">
 </head>
 
 <style>
-    .body {
-        background: linear-gradient( to top, #05070e 5%, rgba(253, 9, 9, 0.4) 100%) !important;
+  .body {
+    background: linear-gradient(
+    180deg,
+    rgba(30, 37, 56, 0.639093137254902) 3%,
+    rgba(30, 37, 56, 0.25253851540616246) 42%,
+    rgba(30, 37, 56, 0.8715861344537815) 77%,
+    rgba(30, 37, 56, 1) 96%
+  );
+    position: relative;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
 
-        position: relative;
-        background-position: center;
-        background-size: cover;
-        background-repeat: no-repeat;
 
-
-    }
+  }
 </style>
-<body>
-    
 
-    <div class="bacdrop_path">
-        <div class="contener">
-            <header></header>
-            <!--  <div class="information_flex">
+<body>
+
+
+  <div class="bacdrop_path">
+    <header></header>
+    <div class="contener">
+
+      <!--  <div class="information_flex">
                 <div class="posters"><img src="/public/dafailt_posters.png" alt=""></div>
                 <div class="title_contener">
                     <h1>Побег из Претории</h1>
@@ -37,14 +45,198 @@
 
             </div> -->
 
-            <canvas id="myChart"></canvas>
-            <canvas id="myChart_two"></canvas>
+      <canvas id="myChart"></canvas>
+      <canvas id="myChart_two"></canvas>
 
+
+      <div class="reaction_flex_cont">
+        <div class="like_react s"><img src="/public/like 1.png" alt=""></div>
+        <div class="dizlike_reac s"><img src="/public/dizlike.png" alt=""></div>
+        <div class="heart s"><img src="/public/heart 1.png" alt=""></div>
+        <p>В избранном у 37933 человек </p>
+      </div>
+
+
+      <div class="main_roles_cont">
+        <div class="flex_h1">
+          <h1>В главных ролях:</h1>
+          <div class="strelka">
+            <p>Все актёры</p>
+            <img src="/public/strelka.png" alt="">
+          </div>
         </div>
-    </div>
+        <div class="contener_create_elem">
+          <!--        <div class="main_box">
+                    <div class="people_img"></div>
 
-    <script type="module" src="/headers/index.js"></script>
-    <script type="module" src="./index.js"></script>
+                    <h2 class="names">Дэниэл Рэдклифф</h2>
+                    <p class="org_name">Daniel Radcliffe</p>
+                    <p class="ru_name">Тим Дженкин</p>
+                </div> -->
+        </div>
+      </div>
+
+
+
+
+      <div class="video_box">
+        <div class="flex_new_treyler">
+          <div class="h1_block">
+            <h1>Новые трейлеры</h1>
+          </div>
+          <div class="p_block">
+            <p>Все трейлеры</p>
+            <div class="img_strelka"><img src="./public/strelka.png" alt=""></div>
+          </div>
+        </div>
+
+
+        <iframe class="iframes" autoplay src="https://www.youtube.com/embed/DuSw0yV439U"
+          allow="accelerometer;  clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen></iframe>
+
+        <div class="flex_contener_layks">
+          <div class="one_flex_box">
+            <div class="name_treylers">
+              <h1>Форсаж 10</h1>
+            </div>
+
+            <div class="flex_icons">
+              <img src="/public/vk.png" alt="">
+              <img src="/public/instagram.png" alt="">
+              <img src="/public/facebook.png" alt="">
+              <img src="/public/twitter.png" alt="">
+              <img src="/public/tri tochki.png" alt="">
+            </div>
+          </div>
+
+
+          <div class="two_flex_box">
+
+            <div class="likes_item">
+              <div class="background_like">
+                <img src="/public/like 1.png" alt="">
+              </div>
+              <div class="like_title top">3425</div>
+            </div>
+
+
+            <div class="diz_likes_item">
+              <div class="backgrounds_diz">
+                <img src="/public/dizlike.png" alt="">
+              </div>
+              <div class="dizlike_titlec tops">420</div>
+            </div>
+
+
+          </div>
+        </div>
+      </div>
+
+
+
+
+      <div class="movie_posters_cont">
+        <div class="flex_new_treyler_posters_films">
+          <div class="h1_block_posters">
+            <h1>Постеры к фильму</h1>
+          </div>
+          <div class="p_block_posters">
+            <p>Все постеры</p>
+            <div class="img_strelka_posters"><img src="/public/strelka.png" alt=""></div>
+          </div>
+        </div>
+
+
+
+        <div class="posters_cont">
+          <!--     <div class="poster"></div>
+        </div> -->
+        </div>
+      </div>
+
+
+      <div class="clone_big_contener">
+        <div class="movie_posters_cont">
+          <div class="flex_new_treyler_posters_films">
+            <div class="h1_block_posters">
+              <h1>Похожие фильмы</h1>
+            </div>
+           
+          </div>
+
+          <div class="clone_cont">
+
+            <div class="big_cont">
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="contener_footers">
+          <div class="blue_zone">
+            <div class="backgroun_footer">
+              <div class="blue_overlay">
+
+                <div class="kinoarea_cinema_icon_flex_cont">
+                  <img src="./public/cinema_icon_footer.png" alt="">
+                  <img src="./public/Kinoarea_footer.png" alt="">
+                </div>
+
+                <div class="email_cont">
+                  <h1>Подпишитесь на E-mail рассылку</h1>
+                  <p class="pup">Если хотиет быть в курсе последних новостей и новинок кино - заполните форму ниже и
+                    оформите
+                    бесплатную E-mail рассылку! </p>
+
+                  <div class="inp_btn_flex_cont">
+                    <input type="text" name="" class="inp_footer" id="" placeholder="Введите свой E-mail адрес">
+                    <button class="btn_footer">Подписаться</button>
+                  </div>
+
+                  <div class="flex_agree_cont">
+                    <input type="radio" class="radio" name="" id="">
+                    <p>Соглашаюсь на условия </p>
+                    <a href="#">политики конфиденциальности</a>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="black_zone">
+
+            <div class="flex_ins_face_twit_you_icons">
+              <img src="/public/vk.png" alt="">
+              <img src="/public/instagram.png" alt="">
+              <img src="/public/facebook.png" alt="">
+              <img src="/public/twitter.png" alt="">
+              <img src="/public/free-icon-youtube-160205.png" alt="">
+            </div>
+
+
+            <div class="a_href_flex_cont">
+              <a href="#">Афиша</a>
+              <a href="#">Новости</a>
+              <a href="#">Персоны</a>
+              <a href="#">Рейтинги</a>
+              <a href="#">Рецензии</a>
+              <a href="#">Каталог фильмов</a>
+            </div>
+
+            <p>2020 © Kinoarea. Все права защищены</p>
+            <p>Политика конфиденциальности</p>
+          </div>
+        </div>
+      </footer>
+      <script type="module" src="./main_rols.js"></script>
+      <script type="module" src="/modules/posters.js"></script>
+      <script type="module" src="/headers/index.js"></script>
+      <script type="module" src="./index.js"></script>
 </body>
 
 </html>

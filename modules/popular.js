@@ -32,5 +32,24 @@ function popular(arr) {
 
         pop_cont.append(divPopular)
         divPopular.append(divImg, divRatings, h3, p);
+
+        
+
+
+        fetch(`https://api.themoviedb.org/3/genre/movie/list?language=en`, {
+            headers: {
+                Authorization: `Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI2ZWIwNmU5YzExYTA2NzFmNmFhYjUwNzU4ZjBhYzczMSIsInN1YiI6IjY0ZDg5YjVlZjQ5NWVlMDI5NDMwNWM0MCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.aoDhRlGV-Iv_PiTmdIt1LCgA7Ho2vh4aV50M04VXY7M`
+            },
+        })
+            .then((res) => res.json())
+            .then((res) => {
+                let info_ganr_tx = ``
+                for (const el of i.genre_ids) {
+                    const genres = res.genres.filter(obj => obj.id === el);
+                    info_ganr_tx = info_ganr_tx + genres[0].name + `, `
+                }
+                p.innerHTML = info_ganr_tx.slice(0, -2)
+            })
+
     }
 }

@@ -13,7 +13,7 @@ fetch('https://api.themoviedb.org/3/genre/movie/list?language=en', {
 
 
     }) */
-export let fethcs = fetch(
+  fetch(
     'https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=1', {
     headers: {
         Authorization: `Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI2ZWIwNmU5YzExYTA2NzFmNmFhYjUwNzU4ZjBhYzczMSIsInN1YiI6IjY0ZDg5YjVlZjQ5NWVlMDI5NDMwNWM0MCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.aoDhRlGV-Iv_PiTmdIt1LCgA7Ho2vh4aV50M04VXY7M`
@@ -121,7 +121,7 @@ function reload_posters(arr) {
 
 
 
-    
+
     }
 
 }

@@ -1,0 +1,253 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.header_cont {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+body{
+    background-color: #121622;
+    padding: 0 0 30px 0;
+}
+
+
+
+
+.actor_contener {
+    width: 1349px;
+    height: 100%;
+
+    overflow-x: hidden;
+    background: #1E2538;
+    ;
+    padding: 50px 20px;
+    margin: 0 auto;
+
+
+
+
+    .photo_info_flex_cont {
+        display: flex;
+        align-items: center;
+        margin-top: 50px;
+        margin-left: 200px;
+
+        gap: 40px;
+
+    }
+
+
+    .img_actors_box {
+
+        .img_item {
+            width: 320px;
+            height: 400px;
+            background-color: #121622;
+            border-radius: 10px;
+        }
+    }
+
+    .info_biagraf_conteners {
+
+        h1 {
+            font-size: 35px;
+            color: white;
+            font-weight: 700;
+        }
+
+        h2 {
+            color: #FFF;
+            font-size: 30px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: normal;
+        }
+
+        .infor_and_biagrafia_flex_box {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+
+            a {
+                text-decoration: none;
+                color: #6D717D;
+
+                font-size: 15px;
+                margin: 10px 0;
+                font-style: normal;
+                font-weight: 400;
+                line-height: normal;
+            }
+        }
+
+
+
+        .info_box {
+
+            .s {
+
+                display: flex;
+                gap: 10px;
+                margin-top: 10px;
+
+                p {
+                    width: 200px;
+                    color: rgba(255, 255, 255, 0.80);
+                    font-size: 18px;
+                    font-style: normal;
+                    font-weight: 400;
+                }
+
+                a {
+                    color: #F2F60F;
+                    font-size: 15px;
+                    font-style: normal;
+                    font-weight: 100;
+                    line-height: normal;
+                    text-decoration-line: underline;
+                }
+            }
+        }
+
+
+        .likes_flec_cont {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            margin-top: 20px;
+
+            .heart_box {
+                width: 50px;
+                height: 50px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border-radius: 10px;
+                background: #1B2133;
+            }
+
+            p {
+                color: #fff;
+            }
+        }
+
+    }
+}
+
+.best_conteners {
+    margin: 0 auto;
+    width: 1200px;
+    margin-top: 50px;
+
+    h1 {
+        color: white;
+    }
+}
+
+.poster_contener_best {
+    margin: 0 auto;
+    display: flex;
+
+    gap: 30px;
+    overflow-x: scroll;
+    margin-top: 20px;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+
+    justify-content: space-between;
+    margin-bottom: 50px;
+
+    .img_box {
+        width: 270px;
+        height: 400px;
+        background-color: #1B2133;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    .h1 {
+        font-size: 17px;
+        color: white;
+        width: 270px;
+        display: flex;
+
+    }
+
+    .p {
+        font-size: 15px;
+        color: #F2F60F;
+
+    }
+
+}
+
+.display_glavniy_cont {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+
+    .left_photo {
+        position: relative;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        // background-image: url(/public/joker.png);
+        background-color: #F2F60F;
+        width: 70%;
+        border-radius: 10px;
+        height: 700px;
+    }
+
+    .title {
+        position: absolute;
+        bottom: 5%;
+        font-size: 14px;
+        color: white;
+        left: 2%;
+    }
+
+    .right_block {
+        height: 700px;
+        overflow-y: scroll;
+
+        &::-webkit-scrollbar {
+            display: none;
+        }
+    }
+
+    .block_img {
+        width: 230px;
+        height: 150px;
+        position: relative;
+        background-position: center;
+        background-repeat: no-repeat;
+        margin-top: 10px;
+        border-radius: 10px;
+        background-size: cover;
+        background-image: url(/public/joker.png);
+        position: relative;
+
+        .p {
+            font-size: 12px;
+            position: absolute;
+            bottom: 5%;
+            left: 1%;
+            color: white;
+        }
+    }
+}
+
+
+.last_contener{
+    h1{
+        color: white;
+        margin: 40px 62px 10px;
+    }
+}

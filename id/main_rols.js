@@ -15,6 +15,7 @@ fetch(`https://api.themoviedb.org/3/movie/${poster_id}/credits`, {
     .then((res) => cast(res.cast))
 
 function cast(arr) {
+    console.log(arr);
     let iframes = document.querySelector('.iframes')
     let contener_create_elem = document.querySelector('.contener_create_elem')
     for (let item_cast of arr.slice(0, 10)) {
@@ -41,7 +42,11 @@ function cast(arr) {
         org_name.innerHTML = item_cast.original_name
         ru_name.innerHTML = item_cast.character
 
+        people_img.onclick = () => {
+            location.assign('/actor_page/index.html?id=' + item_cast.id)
+            console.log('click');
 
+        }
 
         contener_create_elem.append(main_box)
         main_box.append(people_img, names, org_name, ru_name)
@@ -108,9 +113,9 @@ fetch(`  https://api.themoviedb.org/3/movie/${poster_id}movie_id/similar?languag
 function reload_clone(arr) {
 
     let big_cont = document.querySelector('.big_cont')
-    for (let i of arr.slice(0,4)) {
+    for (let i of arr.slice(0, 4)) {
 
-let contener_box_img= document.createElement('div')
+        let contener_box_img = document.createElement('div')
         let img_box = document.createElement('div')
         let h1 = document.createElement('h1')
         let p = document.createElement('p')
@@ -133,7 +138,7 @@ let contener_box_img= document.createElement('div')
 
 
 
-        
+
         fetch(`https://api.themoviedb.org/3/genre/movie/list?language=en`, {
             headers: {
                 Authorization: `Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI2ZWIwNmU5YzExYTA2NzFmNmFhYjUwNzU4ZjBhYzczMSIsInN1YiI6IjY0ZDg5YjVlZjQ5NWVlMDI5NDMwNWM0MCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.aoDhRlGV-Iv_PiTmdIt1LCgA7Ho2vh4aV50M04VXY7M`
@@ -148,15 +153,5 @@ let contener_box_img= document.createElement('div')
                 }
                 p.innerHTML = info_ganr_tx.slice(0, -2)
             })
-
-
-
-
     }
 }
-
-
-
-
-
-

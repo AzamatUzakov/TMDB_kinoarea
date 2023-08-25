@@ -52,14 +52,14 @@ function headers_reload() {
     link_eayt.innerText = 'Категории';
     add_box.innerHTML = "Войти";
 
-    link_one.href ="#"
-    link_two.href ="#"
-    link_three.href ="#"
-    link_foor.href ="#"
-    link_five.href ="#"
-    link_six.href ="#"
-    link_eayt.href ="#"
-    add_box.href ="#"
+    link_one.href = "#"
+    link_two.href = "#"
+    link_three.href = "#"
+    link_foor.href = "#"
+    link_five.href = "#"
+    link_six.href = "#"
+    link_eayt.href = "#"
+    add_box.href = "#"
 
     cinema_icons_img.src = "../public/cinema 1.svg";
     kino_icons_img.src = "../public/kinoarea.png";
@@ -82,6 +82,11 @@ function headers_reload() {
     search_button.append(btn_flex);
     btn_flex.append(search_box, add_box);
     search_box.append(search_box_img);
+
+
+    kino_icons.onclick = () => {
+location.assign('/')
+    }
 }
 
 headers_reload();

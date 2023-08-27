@@ -156,6 +156,20 @@ header {
 
 }
 
+.act_btn {
+  width: 150px;
+  height: 50px;
+  border: 1px solid white;
+  background-color: white;
+  color: #3657CB;
+  border-radius: 10px;
+  font-size: 16px;
+  transition: .5s ease;
+  scale: 0;
+  display: none;
+
+}
+
 .layot_contener {
   top: 0%;
 
@@ -165,19 +179,6 @@ header {
 
   transform: translateX(-50%);
 
-  .act_btn {
-    width: 150px;
-    height: 50px;
-    border: 1px solid white;
-    background-color: white;
-    color: #3657CB;
-    border-radius: 10px;
-    font-size: 16px;
-    transition: .5s ease;
-    scale: 0;
-    display: none;
-
-  }
 
   width: 80%;
   margin: 0 auto;
@@ -262,7 +263,6 @@ header {
       text-align: end;
       justify-content: center;
 
-      align-items: end;
 
 
     }
@@ -289,11 +289,29 @@ header {
       background-color: green;
       display: flex;
       position: relative;
-      justify-content: end;
       border-radius: 10px;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
 
     }
 
+    .hovereds {
+      width: 100%;
+      height: 100%;
+      z-index: 99;
+      border-radius: 10px;
+      top: 0%;
+      background: rgba(54, 87, 203, 0.65);
+      transition: .9s ease;
+      position: absolute;
+      display: flex;
+      text-align: end;
+      justify-content: center;
+
+
+
+    }
     .reyting {
       width: 20%;
       height: 8%;
@@ -572,6 +590,7 @@ header {
       width: 100%;
       justify-content: center;
 
+
       &::-webkit-scrollbar {
         display: none;
       }
@@ -588,13 +607,16 @@ header {
 
       .popular_hovered {
         width: 100%;
-        height: 92%;
+        height: 100%;
         z-index: 99;
         border-radius: 10px;
         top: 0%;
         background: rgba(54, 87, 203, 0.65);
         transition: .9s ease;
-        position: absolute;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
 
 
       }
@@ -623,8 +645,29 @@ header {
         border-radius: 10px;
         width: 250px;
         height: 350px;
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        position: relative;
 
       }
+
+
+      .popular_hovereds {
+        width: 100%;
+        height: 100%;
+        z-index: 99;
+        border-radius: 10px;
+        top: 0%;
+        background: rgba(54, 87, 203, 0.65);
+        transition: .9s ease;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+
+
+      }      
 
       .pop_reytings {
         width: 20%;
@@ -1089,18 +1132,6 @@ header {
     width: 280px;
     position: relative;
 
-    /*      .hovered {
-          width: 100%;
-          height: 100%;
-          z-index: 99;
-          border-radius: 10px;
-          top: 0%;
-          background: rgba(54, 87, 203, 0.65);
-          transition: .9s ease;
-          position: absolute;
-
-
-        } */
 
     .h2 {
       color: #FFF;
@@ -1126,8 +1157,32 @@ header {
       display: flex;
       justify-content: end;
       border-radius: 10px;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      z-index: -1;
 
     }
+    
+  .hovereds {
+    width: 100%;
+    height: 90.5%;
+    z-index: 99;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    top: 0%;
+    background: rgba(54, 87, 203, 0.65);
+    transition: .9s ease;
+    position: absolute;
+
+
+  } 
 
 
 
@@ -1547,35 +1602,6 @@ footer {
 
   }
 }
-
-.contener_act{
-  h1{
-    color: white;
-    margin: 50px 40px 0;
-  }
-}
-
-.actor_img {
-
-
-display: flex;
-align-items: center;
-flex-wrap: wrap;
-gap: 20px;
-justify-content: center;
-margin:  0 auto;
-margin-top: 20px;
-
-  .item {
-    background-color: #00fa0c;
-    width: 400px;
-    border-radius: 10px;
-    height:500px;
-
-    gap: 30px;
-  }
-}
-
 
 
 

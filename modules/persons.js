@@ -37,6 +37,13 @@ function persons(arr) {
         img_place.prepend(place_title, place_cont_avtor)
         place_cont_avtor.prepend(h4, pig, p)
 
+
+           img_place.onclick = () => {
+            location.assign('/actor_page/index.html?id=' + item_cast.id)
+            console.log('click');
+
+        }
+
     }
 
 }

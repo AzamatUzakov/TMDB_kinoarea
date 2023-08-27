@@ -196,11 +196,27 @@
   }
 }
 
+.popular_hovereds {
+  width: 100%;
+  height: 100%;
+  z-index: 99;
+  cursor: pointer;
+  border-radius: 10px;
+  top: 0%;
+  background: rgba(54, 87, 203, 0.65);
+  transition: .9s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+
+
+}
+
 .contener_create_elem {
   display: flex;
   flex-wrap: wrap;
   gap: 25px;
-  justify-content: space-between;
   margin-bottom: 50px;
 }
 

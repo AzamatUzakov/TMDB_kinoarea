@@ -85,8 +85,14 @@ function headers_reload() {
 
 
     kino_icons.onclick = () => {
-location.assign('/')
+        location.assign('/')
     }
+
+    add_box.onclick = () => {
+location.assign("../acount/index.html")
+    }
+
+
 }
 
 headers_reload();

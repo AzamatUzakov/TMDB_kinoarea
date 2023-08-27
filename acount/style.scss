@@ -1,0 +1,110 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+
+.contner_acount {
+    max-width: 1400px;
+    margin: 0 auto;
+    background-color: #1E2538;
+
+    padding: 50px;
+
+    .box_content {
+        margin-top: 50px;
+
+        .action_pages_flex_cont {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+
+            .action_box_saidbar {
+                .action_btn {
+                    width: 70px;
+                    height: 70px;
+                    border-radius: 10px;
+                    background: #191E2E;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    margin-top: 10px;
+                    cursor: pointer;
+
+                }
+            }
+
+            .page_wraper_cont {
+                width: 100%;
+
+
+                .pages {
+                    display: none;
+                    height: 540px;
+                    border-radius: 10px;
+                    background: #3e4149;
+                    transition: 0.5s ease;
+
+              
+                }
+
+                .active {
+                    display: block;
+                }
+            }
+
+            #homes {
+                padding: 30px;
+
+                h1 {
+                    color: white;
+                    margin-bottom: 20px;
+                }
+
+                .profil_flex_box {
+                    display: flex;
+                    align-items: center;
+                    gap: 30px;
+
+                    .gravatar {
+                        width: 300px;
+                        height: 400px;
+                    }
+
+
+                    .titles_box {
+                        h2 {
+                            font-size: 29px;
+                            color: white;
+                        }
+
+                        .p {
+                            width: 500px;
+                            margin: 20px 0;
+                            color: rgba(255, 255, 255, 0.80);
+                        }
+
+                        .s {
+                            margin-top: 10px;
+                            gap: 20px;
+                            display: flex;
+                            align-items: center;
+                            a{
+                                color: yellow;
+                            }
+                            p{
+                                width: 150px;
+                                color: rgba(255, 255, 255, 0.80);
+                            }
+                        }
+                    }
+                }
+
+
+            }
+
+        }
+    }
+}

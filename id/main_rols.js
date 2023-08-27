@@ -116,14 +116,21 @@ function reload_clone(arr) {
     for (let i of arr.slice(0, 4)) {
 
         let contener_box_img = document.createElement('div')
+        let hovered = document.createElement('div')
         let img_box = document.createElement('div')
         let h1 = document.createElement('h1')
         let p = document.createElement('p')
+        let btn = document.createElement('button')
+        let btn_a_href = document.createElement('a')
+
 
         img_box.classList.add('img_box')
         h1.classList.add('h1')
         p.classList.add('p')
+        btn.classList.add('act_btn')
 
+
+        btn_a_href.innerHTML = 'Карточка фильма'
         h1.innerHTML = i.title
 
         img_box.style.backgroundImage = ` url(https://image.tmdb.org/t/p/original${i.poster_path} )`
@@ -132,11 +139,40 @@ function reload_clone(arr) {
             img_box.style.backgroundImage = ` url(/public/Постер.png)`
         }
 
+
+
+        img_box.onmouseenter = () => {
+            hovered.classList.add('popular_hovereds')
+            btn.style.display = 'block'
+            setTimeout(() => {
+                btn.style.scale = 1
+            }, 10);
+        }
+
+
+            
+            setTimeout(() => {
+                img_box.onmouseleave = () => {
+                    hovered.classList.remove('popular_hovereds')
+                    btn.style.display = 'none'
+                    btn.style.scale = 0
+
+                    console.log('movi');
+                }
+            }, 1);
+        
+
+
         big_cont.append(contener_box_img)
-        contener_box_img.append(img_box, h1, p)
+        contener_box_img.append(img_box, h1, p,)
+        img_box.append(hovered)
+        hovered.append(btn)
+        btn.append(btn_a_href)
 
 
-
+        btn.onclick = () => {
+            btn_a_href.href = "/id/id.html?id=" + i.id
+        }
 
 
         fetch(`https://api.themoviedb.org/3/genre/movie/list?language=en`, {
@@ -154,4 +190,4 @@ function reload_clone(arr) {
                 p.innerHTML = info_ganr_tx.slice(0, -2)
             })
     }
-}
+    }

@@ -1,4 +1,4 @@
-  function headers_reload() {
+function headers_reload() {
     let header = document.querySelector('header');
     let icos_flex = document.createElement('div');
     let kinoarea_icons_blocks = document.createElement('div');
@@ -22,10 +22,11 @@
     let search_button = document.createElement('div');
     let btn_flex = document.createElement('div');
     let search_box = document.createElement('div');
-   // let search_box_img = document.createElement('img');
+    // let search_box_img = document.createElement('img');
     let add_box = document.createElement('div');
     let odobrity_btn = document.createElement('button')
     let login = document.createElement('button')
+    let exit = document.createElement('button')
 
     icos_flex.classList.add('icos_flex');
     kinoarea_icons_blocks.classList.add('kinoarea_icons_blocks');
@@ -40,10 +41,11 @@
     link_eayt.classList.add('a');
     search_button.classList.add('search_button');
     btn_flex.classList.add('btn_flex');
-  //  search_box.classList.add('search_box');
+    //  search_box.classList.add('search_box');
     add_box.classList.add('add_box');
-    odobrity_btn.classList.add('odobrity_btn')
+    odobrity_btn.classList.add('defoult_btn')
     login.classList.add('odobrity_btn')
+    exit.classList.add('defoult_btn')
 
 
     link_one.innerHTML = "Афиша";
@@ -56,6 +58,7 @@
     add_box.innerHTML = "Войти";
     odobrity_btn.innerHTML = "Одобрить"
     login.innerHTML = "Login"
+    exit.innerHTML = "Выйти"
 
 
     link_one.href = "#"
@@ -73,7 +76,7 @@
     insta_img.src = "../public/instagram.png";
     face_img.src = "../public/facebook.png";
     twitter_img.src = "../public/twitter.png";
-  //  search_box_img.src = "../public/search.png";
+    //  search_box_img.src = "../public/search.png";
 
     header.append(icos_flex, link_a_block, search_button);
     icos_flex.append(kinoarea_icons_blocks, vk_ins_face_twitt_icons_blocks);
@@ -86,8 +89,8 @@
     link_a_block.append(link_one, link_two, link_three, link_foor, link_five, link_six, link_eayt);
 
     search_button.append(btn_flex);
-    btn_flex.append(search_box, add_box, login, odobrity_btn );
- //   search_box.append(search_box_img);
+    btn_flex.append(search_box, add_box, login, odobrity_btn, exit);
+    //   search_box.append(search_box_img);
 
 
     kino_icons.onclick = () => {
@@ -143,15 +146,19 @@
     }/*  */
     let user_auth = JSON.parse(localStorage.getItem('user_auth')) || null
     if (user_auth) {
-        fetch(`https://api.themoviedb.org/3/account/${user_auth?.account_id}`,{
+        fetch(`https://api.themoviedb.org/3/account/${user_auth?.account_id}`, {
             headers: {
                 Authorization: `Bearer ${API_KEY}`,
                 'Content-Type': "application/json"
             },
         })
-        .then(res => res.json())
-        .then(res => console.log(res))
+            .then(res => res.json())
+            .then(res => console.log(res))
 
+    }
+    exit.onclick = () => {
+        localStorage.removeItem('user_auth')
+        location.reload()
     }
 
 }

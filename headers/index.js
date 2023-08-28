@@ -24,6 +24,9 @@ function headers_reload() {
     let search_box = document.createElement('div');
     let search_box_img = document.createElement('img');
     let add_box = document.createElement('div');
+    let odobrity_btn = document.createElement('button')
+    let login = document.createElement('button')
+
 
     icos_flex.classList.add('icos_flex');
     kinoarea_icons_blocks.classList.add('kinoarea_icons_blocks');
@@ -40,7 +43,8 @@ function headers_reload() {
     btn_flex.classList.add('btn_flex');
     search_box.classList.add('search_box');
     add_box.classList.add('add_box');
-
+    odobrity_btn.classList.add('odobrity_btn')
+    login.classList.add('odobrity_btn')
 
 
     link_one.innerHTML = "Афиша";
@@ -51,6 +55,9 @@ function headers_reload() {
     link_six.innerHTML = 'Подборки';
     link_eayt.innerText = 'Категории';
     add_box.innerHTML = "Войти";
+    odobrity_btn.innerHTML = "Одобрить"
+    login.innerHTML = "Login"
+
 
     link_one.href = "#"
     link_two.href = "#"
@@ -80,7 +87,7 @@ function headers_reload() {
     link_a_block.append(link_one, link_two, link_three, link_foor, link_five, link_six, link_eayt);
 
     search_button.append(btn_flex);
-    btn_flex.append(search_box, add_box);
+    btn_flex.append(search_box, add_box, odobrity_btn, login);
     search_box.append(search_box_img);
 
 
@@ -89,7 +96,51 @@ function headers_reload() {
     }
 
     add_box.onclick = () => {
-location.assign("../acount/index.html")
+        location.assign("../acount/index.html")
+    }
+
+    let API_KEY = "eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI2ZWIwNmU5YzExYTA2NzFmNmFhYjUwNzU4ZjBhYzczMSIsInN1YiI6IjY0ZDg5YjVlZjQ5NWVlMDI5NDMwNWM0MCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.aoDhRlGV-Iv_PiTmdIt1LCgA7Ho2vh4aV50M04VXY7M"
+    let reqToken = ""
+
+    login.onclick = () => {
+        fetch("https://api.themoviedb.org/4/auth/request_token", {
+            method: 'POST',
+            dataType: 'json',
+            headers: {
+                Authorization: `Bearer ${API_KEY}`,
+                'Content-Type': "application/json"
+            },
+            start_time: new Date().getTime()
+        })
+            .then((res) => res.json())
+            .then(res => {
+                if (res.success) {
+                    reqToken = res.request_token
+                    window.open(`https://www.themoviedb.org/auth/access?request_token=${res.request_token}`)
+                }
+            })
+    }
+
+
+    odobrity_btn.onclick = () => {
+        fetch(`https://api.themoviedb.org/4/auth/access_token`, {
+            method: 'POST',
+            dataType: 'json',
+            headers: {
+                Authorization: `Bearer ${API_KEY}`,
+                'Content-Type': "application/json"
+            },
+            body: JSON.stringify({ request_token: reqToken }),
+            start_time: new Date().getTime()
+        })
+        .then((res)=>res.json())
+        .then(res=>{
+            if (res.success) {
+                localStorage.setItem('user_auth',JSON.stringify(res))
+           location.reload()
+            }
+        })
+
     }
 
 

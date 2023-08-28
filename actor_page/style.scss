@@ -258,7 +258,6 @@ body {
 
 .actor_img {
 
-
     display: grid;
     align-items: center;
     flex-wrap: wrap;
@@ -274,7 +273,10 @@ body {
         width: 100%;
         border-radius: 10px;
         height:500px;
-        gap: 30px;
+        gap: 20px;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
 
         &:first-child {
             grid-column: 1 / span 2;

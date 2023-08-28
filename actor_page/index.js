@@ -161,9 +161,10 @@ function img(arr) {
     let actor_img = document.querySelector('.actor_img')
 
     for (let i of arr.slice(0,6)) {
+        
         let item = document.createElement('img')
         item.classList.add('item')
-        item.src = import.meta.env.VITE_PICTURE_URL + i.file_path
+        item.style.backgroundImage = ` url(https://image.tmdb.org/t/p/original${i.file_path})`
         actor_img.append(item)
 
     }

@@ -22,6 +22,7 @@ fetch(`https://api.themoviedb.org/3/movie/${poster_id}`, {
 
 function reload_informations(arr) {
 
+    console.log(arr);
 
     let procents_hindred = 5
     let Kinoarea_reyting = 0
@@ -109,15 +110,14 @@ function reload_informations(arr) {
     one_chart_box.prepend(ctx, chart_one_totals, chart_one_name)
     two_chart_box.prepend(ctx_two, chart_two_totals, chart_two_name)
 
-  function hart() {
+    /* function hart() {
         if (localStorage.setItem('cinema')) {
             
         }
-    }  
+    } */
     hart.onclick = () => {
         const cinemas = JSON.parse(localStorage.getItem('cinema')) || []
-        cinemas.push(arr.id)
-
+        cinemas.push(arr)
         localStorage.setItem('cinema', JSON.stringify(cinemas))
 
 

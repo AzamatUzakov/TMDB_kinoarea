@@ -15,7 +15,7 @@ fetch(`https://api.themoviedb.org/3/movie/${poster_id}/credits`, {
     .then((res) => cast(res.cast))
 
 function cast(arr) {
-    console.log(arr);
+
     let iframes = document.querySelector('.iframes')
     let contener_create_elem = document.querySelector('.contener_create_elem')
     for (let item_cast of arr.slice(0, 10)) {

@@ -105,11 +105,27 @@ console.log(arr2);
 }
 
 
+
+
+
+
+let persons = JSON.parse(localStorage.getItem('pers')) || []
+
+fetch(`https://api.themoviedb.org/3/person/${persons.id}person_id?language=en-US`, {
+    headers: {
+        Authorization: `Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI2ZWIwNmU5YzExYTA2NzFmNmFhYjUwNzU4ZjBhYzczMSIsInN1YiI6IjY0ZDg5YjVlZjQ5NWVlMDI5NDMwNWM0MCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.aoDhRlGV-Iv_PiTmdIt1LCgA7Ho2vh4aV50M04VXY7M`
+    },
+})
+
+    .then((res) => res.json())
+    .then((res) => console.log(res));
+
+    persons_local(persons)
 function persons_local(arr) {
+console.log(arr);
+    for (let item of arr) {
 
-    for (let item = 0; item < 10; item++) {
-
-        let conteners = document.querySelector('.conteners')
+        let conteners = document.querySelector('.contents')
         let box = document.createElement('div')
         let item_img = document.createElement('img')
         let titles = document.createElement('div')
@@ -122,10 +138,10 @@ function persons_local(arr) {
         h2.classList.add('h2')
         p.classList.add('p')
 
-        item_img.src = import.meta.env.VITE_PICTURE_URL + arr.poster_path
+         item_img.src = import.meta.env.VITE_PICTURE_URL + item.profile_path
 
-        h2.innerHTML = arr.original_title
-        p.innerHTML = 'geners'
+        h2.innerHTML = item.name 
+        p.innerHTML = item.place_of_birth
 
         conteners.append(box)
         box.append(item_img, titles)
@@ -133,4 +149,4 @@ function persons_local(arr) {
     }
 }
 
-persons_local()
+persons_local() 

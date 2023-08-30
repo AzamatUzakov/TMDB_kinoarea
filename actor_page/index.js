@@ -16,6 +16,7 @@ fetch(`https://api.themoviedb.org/3/person/${poster_id}person_id?language=en-US`
 function actors(arr) {
     // console.log(arr);
     let img_actors_box = document.querySelector('.img_actors_box')
+    console.log(arr);
 
     let img_item = document.querySelector('.img_item')
     let ru_name = document.querySelector('.ru_name')
@@ -26,6 +27,7 @@ function actors(arr) {
     let location = document.querySelector('.location')
     let genre = document.querySelector('.genre')
     let films = document.querySelector('.films')
+    let heart_box = document.querySelector('.heart_box img')
 
     ru_name.innerHTML = arr.name
     en_name.innerHTML = arr.name
@@ -37,6 +39,14 @@ function actors(arr) {
     films.innerHTML = arr.known_for_department
 
     img_item.src = import.meta.env.VITE_PICTURE_URL + arr.profile_path
+
+    heart_box.onclick = () => {
+
+        const person = JSON.parse(localStorage.getItem('pers')) || []
+        person.push(arr)
+        localStorage.setItem('pers', JSON.stringify(person))
+    }
+
 }
 
 
@@ -120,7 +130,6 @@ fetch(`https://api.themoviedb.org/3/person/${poster_id}/images`, {
 
 function reload_img(arr) {
 
-    console.log(arr);
     let left_photo = document.querySelector('.left_photo')
     let right_block = document.querySelector('.right_block')
     for (let i of arr) {
@@ -159,9 +168,8 @@ fetch(`https://api.themoviedb.org/3/person/${poster_id}/images`, {
 
 function img(arr) {
     let actor_img = document.querySelector('.actor_img')
+    for (let i of arr.slice(0, 6)) {
 
-    for (let i of arr.slice(0,6)) {
-        
         let item = document.createElement('img')
         item.classList.add('item')
         item.style.backgroundImage = ` url(https://image.tmdb.org/t/p/original${i.file_path})`

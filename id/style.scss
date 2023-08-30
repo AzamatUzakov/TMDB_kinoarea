@@ -3,7 +3,24 @@
   margin: 0;
   box-sizing: border-box;
 }
+.hart_img{
+  
+  background-image: url(../public/whoite_hart_collor.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 30px;
+  height: 30px;
+}
+.hart_active{
+  background-image: url(/public/red_hart_collor.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 30px;
+  height: 30px;
 
+}
 
 .reaction_flex_cont {
   display: flex;

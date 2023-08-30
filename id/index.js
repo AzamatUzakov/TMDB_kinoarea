@@ -3,8 +3,11 @@ Chart.register(...registerables)
 
 
 
- let poster_id = location.search.split('=').at(-1)
+let poster_id = location.search.split('=').at(-1)
 let body = document.querySelector('body')
+let hart = document.querySelector('.hart_img')
+let heartClass = 'red'
+
 
 
 fetch(`https://api.themoviedb.org/3/movie/${poster_id}`, {
@@ -19,7 +22,8 @@ fetch(`https://api.themoviedb.org/3/movie/${poster_id}`, {
 
 function reload_informations(arr) {
 
-    let procents_hindred = 10
+
+    let procents_hindred = 5
     let Kinoarea_reyting = 0
     let contener = document.querySelector('.contener')
     let information_flex = document.createElement('div')
@@ -105,6 +109,26 @@ function reload_informations(arr) {
     one_chart_box.prepend(ctx, chart_one_totals, chart_one_name)
     two_chart_box.prepend(ctx_two, chart_two_totals, chart_two_name)
 
+  function hart() {
+        if (localStorage.setItem('cinema')) {
+            
+        }
+    }  
+    hart.onclick = () => {
+        const cinemas = JSON.parse(localStorage.getItem('cinema')) || []
+        cinemas.push(arr.id)
+
+        localStorage.setItem('cinema', JSON.stringify(cinemas))
+
+
+        /*     if (!hart.classList.contains('hart_active')) {
+                hart.classList.add('hart_active');
+                localStorage.setItem('heartIconColor', heartClass);
+            } else {
+                hart.classList.remove('hart_active');
+                localStorage.removeItem('heartIconColor');
+            } */
+    }
 
 
 
@@ -124,18 +148,18 @@ function reload_informations(arr) {
             chart_one_totals.innerHTML = Kinoarea_reyting
             chart_two_totals.innerHTML = Kinoarea_reyting
 
-       /*      function police() {
-                if (Kinoarea_reyting > 8) {
-                    let moree = '#4BCB36'
-                } else if (Kinoarea_reyting < 7) {
-                    let moree_teo = '#89CB36'
-                } else if (Kinoarea_reyting < 5) {
-                    let moree_three = "#CB6C36"
-                }else{
-                    let moree
-                }
-
-            } */
+            /*      function police() {
+                     if (Kinoarea_reyting > 8) {
+                         let moree = '#4BCB36'
+                     } else if (Kinoarea_reyting < 7) {
+                         let moree_teo = '#89CB36'
+                     } else if (Kinoarea_reyting < 5) {
+                         let moree_three = "#CB6C36"
+                     }else{
+                         let moree
+                     }
+     
+                 } */
 
             new Chart(ctx, {
                 type: 'doughnut',

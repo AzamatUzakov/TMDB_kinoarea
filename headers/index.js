@@ -89,7 +89,7 @@ function headers_reload() {
     link_a_block.append(link_one, link_two, link_three, link_foor, link_five, link_six, link_eayt);
 
     search_button.append(btn_flex);
-    btn_flex.append(search_box, add_box, login, odobrity_btn, exit);
+   // btn_flex.append(search_box, add_box, login, odobrity_btn, exit);
     //   search_box.append(search_box_img);
 
 
